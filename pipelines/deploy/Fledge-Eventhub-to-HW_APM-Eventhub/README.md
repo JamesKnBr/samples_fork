@@ -1,4 +1,4 @@
-# Fledge Eventhub to HW APM Eventhub Pipeline
+# Fledge Eventhub to Honeywell APM Eventhub Pipeline
 
 This article provides a guide on how to execute a pipeline that batch reads Fledge data from an Eventhub, transforms to APM and writes to another Eventhub using the RTDIP SDK. This pipeline was tested on an M2 Macbook Pro using VS Code in a Python (3.10) environment.
 
