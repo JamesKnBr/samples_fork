@@ -21,5 +21,5 @@ This pipeline job requires the packages:
 Below is an example of reading from an Eventhub, transforming and writing to another Eventhub
 
 ```python
---8<-- "https://raw.githubusercontent.com/rtdip/samples/main/pipelines/deploy/Fledge-Eventhub-to_HW_APM-eventhub/pipeline.py"
+--8<-- "https://raw.githubusercontent.com/rtdip/samples/main/pipelines/deploy/Fledge-Eventhub-to-HW_APM-eventhub/pipeline.py"
 ```
