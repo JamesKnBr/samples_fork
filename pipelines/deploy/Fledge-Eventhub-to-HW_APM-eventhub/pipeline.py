@@ -11,7 +11,7 @@ spark = (
 )
 
 eventhub_source_configuration = {
-    "eventhubs.connectionString": "Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXX",
+    "eventhubs.connectionString": "{Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXX}",
     "eventhubs.consumerGroup": "$Default",
     "eventhubs.startingPosition": json.dumps({"offset": "0", "seqNo": -1, "enqueuedTime": None, "isInclusive": True})}
 
@@ -20,6 +20,6 @@ fledge_df = BinaryToStringTransformer(source_df,"body", "body").transform()
 pcdm_df = FledgeOPCUAJsonToPCDMTransformer(fledge_df, "body").transform()
 hw_apm_df = PCDMToHoneywellAPMTransformer(pcdm_df, history_samples_per_message=5).transform()
 eventhub_destination_configuration = {
-    "eventhubs.connectionString": "Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXX",
+    "eventhubs.connectionString": "{Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXX}",
     }
 SparkEventhubDestination(spark, data = hw_apm_df, options = eventhub_destination_configuration).write_batch()
